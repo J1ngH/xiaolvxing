@@ -13,12 +13,7 @@
 
 ### 🌐 在线体验
 
-**👉 [点击立即体验](https://xiaolvxing.streamlit.app)**（无需注册，打开即用）
-
-### Demo 展示
-
-<!-- TODO: 替换为你的截图/GIF -->
-![Demo](assets/demo.png)
+**👉 [点击立即体验]([https://xiaolvxing.streamlit.app](https://xiaolvxing-amrqny4tq4vyj6uqj6pqyd.streamlit.app/))**（无需注册，打开即用）
 
 ## 🏗️ Workflow 架构
 
@@ -76,7 +71,7 @@
 
 ### 方式一：在线体验
 
-**👉 [xiaolvxing.streamlit.app](https://xiaolvxing.streamlit.app)**
+**👉 [xiaolvxing.streamlit.app]([https://xiaolvxing.streamlit.app](https://xiaolvxing-amrqny4tq4vyj6uqj6pqyd.streamlit.app/))**
 
 打开链接 → 输入目的地 → 点击生成 → 秒出攻略。无需安装任何东西。
 
