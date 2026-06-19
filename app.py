@@ -250,6 +250,11 @@ def generate_route_fast(
 任务：
 根据候选景点生成每日旅行路线。
 
+## 硬性约束（违反即错误）
+- **必须**生成恰好 {travel_days} 天的路线，一天都不能少
+- 如果 {travel_days} 天排不满候选景点，最后几天可以安排自由探索、美食打卡等灵活行程
+- 但无论如何，itinerary 数组长度必须等于 {travel_days}
+
 规划规则：
 - 每天最多3个地点
 - 特种兵：每天3个地点
@@ -265,7 +270,6 @@ def generate_route_fast(
 - reason不超过25字
 - summary_tips最多2条，每条不超过25字
 - xhs_tips固定输出空数组 []
-- 如果候选景点不足，可以少排，不要编造过多地点
 
 只输出合法JSON，不要Markdown，不要解释，不要代码块，不要<think>。
 
@@ -288,7 +292,9 @@ def generate_route_fast(
       "summary_tips": []
     }}
   ]
-}}"""
+}}
+
+再次强调：itinerary 数组长度必须等于 {travel_days}，一天不能少。"""
     result = call_llm(prompt, temperature=0.7)
     return _parse_json(result)
 
@@ -585,6 +591,15 @@ def run_workflow(
         destination_text, travel_days, travel_style, pace, json.dumps(pois_result, ensure_ascii=False)
     )
     day_count = len(route_result.get("itinerary", []))
+
+    # 兜底：如果 LLM 没生成足够天数，重试一次
+    if day_count < travel_days:
+        st.session_state["progress_text"] = "🗺️ 路线天数不足，正在补充规划..."
+        route_result = generate_route_fast(
+            destination_text, travel_days, travel_style, pace, json.dumps(pois_result, ensure_ascii=False)
+        )
+        day_count = len(route_result.get("itinerary", []))
+
     steps["🗺️ AI 生成路线"] = f"已生成 **{day_count}** 天行程"
 
     # ---- Step 6: 小红书增强（条件分支） ----
