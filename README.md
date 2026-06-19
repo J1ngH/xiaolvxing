@@ -15,10 +15,6 @@
 
 **👉 [点击立即体验](https://xiaolvxing-amrqny4tq4vyj6uqj6pqyd.streamlit.app/)**（无需注册，打开即用）
 
-### Demo 展示
-
-<!-- TODO: 替换为你的截图/GIF -->
-![Demo](assets/demo.png)
 
 ## 🏗️ Workflow 架构
 
