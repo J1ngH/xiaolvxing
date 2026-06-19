@@ -74,7 +74,7 @@
 
 ## 🚀 如何运行
 
-### 方式一：在线体验（推荐给面试官）
+### 方式一：在线体验
 
 **👉 [xiaolvxing.streamlit.app](https://xiaolvxing.streamlit.app)**
 
