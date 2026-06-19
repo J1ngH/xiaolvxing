@@ -1,0 +1,783 @@
+app:
+  description: ''
+  icon: 8b7b9baa-834b-46f2-b725-da63155bc8f8
+  icon_background: ''
+  icon_type: image
+  mode: workflow
+  name: 小旅星
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.17@f7a5c1d222d17ee419b17a80d6e4923838fe93788dc724a3af73fbc6990b3a32
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1780812640826-source-1780813376296-target
+      selected: false
+      source: '1780812640826'
+      sourceHandle: source
+      target: '1780813376296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1780813376296-source-1780814636466-target
+      selected: false
+      source: '1780813376296'
+      sourceHandle: source
+      target: '1780814636466'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1780814636466-source-1780901047235-target
+      selected: false
+      source: '1780814636466'
+      sourceHandle: source
+      target: '1780901047235'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 17809027007820-source-17809027007821-target
+      selected: false
+      source: '17809027007820'
+      sourceHandle: source
+      target: '17809027007821'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17809027007823-source-17809027007820-target
+      selected: false
+      source: '17809027007823'
+      sourceHandle: source
+      target: '17809027007820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 17809027007822-source-17809027007824-target
+      selected: false
+      source: '17809027007822'
+      sourceHandle: source
+      target: '17809027007824'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 17809027007824-source-17809027007823-target
+      selected: false
+      source: '17809027007824'
+      sourceHandle: source
+      target: '17809027007823'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: if-else
+      id: 1780901047235-source-1780902943201-target
+      source: '1780901047235'
+      sourceHandle: source
+      target: '1780902943201'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 1780902943201-true-1780899027725-target
+      source: '1780902943201'
+      sourceHandle: 'true'
+      target: '1780899027725'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1780902943201-false-17809027007822-target
+      source: '1780902943201'
+      sourceHandle: 'false'
+      target: '17809027007822'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1780808485397-source-1780903329637-target
+      source: '1780808485397'
+      sourceHandle: source
+      target: '1780903329637'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1780903329637-source-1780812640826-target
+      source: '1780903329637'
+      sourceHandle: source
+      target: '1780812640826'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables:
+        - default: ''
+          hint: ''
+          label: destination
+          max_length: 20
+          options: []
+          placeholder: ''
+          required: true
+          type: paragraph
+          variable: destination
+        - default: ''
+          hint: ''
+          label: start_date
+          options: []
+          placeholder: ''
+          required: true
+          type: text-input
+          variable: start_date
+        - default: ''
+          hint: ''
+          label: end_date
+          options: []
+          placeholder: ''
+          required: true
+          type: text-input
+          variable: end_date
+        - hint: ''
+          label: travel_style
+          options:
+          - 大众打卡
+          - 自然景色
+          - 美食优先
+          - 文化历史
+          - 小众探索
+          placeholder: ''
+          required: true
+          type: select
+          variable: travel_style
+        - hint: ''
+          label: pace
+          options:
+          - 特种兵
+          - 适中
+          - 休闲
+          placeholder: ''
+          required: true
+          type: select
+          variable: pace
+        - default: ''
+          hint: ''
+          label: xhs_share_text
+          options: []
+          placeholder: ''
+          required: false
+          type: paragraph
+          variable: xhs_share_text
+      height: 237
+      id: '1780808485397'
+      position:
+        x: 1.4285714285714448
+        y: 1.4285714285714164
+      positionAbsolute:
+        x: 1.4285714285714448
+        y: 1.4285714285714164
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "from datetime import datetime\n\ndef main(start_date: str, end_date:\
+          \ str):\n\n    start_dt = datetime.strptime(\n        start_date,\n    \
+          \    \"%Y-%m-%d\"\n    )\n\n    end_dt = datetime.strptime(\n        end_date,\n\
+          \        \"%Y-%m-%d\"\n    )\n\n    travel_days = (\n        end_dt - start_dt\n\
+          \    ).days + 1\n\n    return {\n        \"travel_days\": travel_days\n\
+          \    }"
+        code_language: python3
+        desc: 计算游玩天数
+        outputs:
+          travel_days:
+            children: null
+            type: number
+        selected: false
+        title: normalize_date
+        type: code
+        variables:
+        - value_selector:
+          - '1780808485397'
+          - start_date
+          value_type: string
+          variable: start_date
+        - value_selector:
+          - '1780808485397'
+          - end_date
+          value_type: string
+          variable: end_date
+      height: 78
+      id: '1780812640826'
+      position:
+        x: 642
+        y: 119.33333333333331
+      positionAbsolute:
+        x: 642
+        y: 119.33333333333331
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "def main(destination: str):\n\n    text = (\n        destination\n\
+          \        .replace(\"，\", \",\")\n        .replace(\"、\", \",\")\n      \
+          \  .replace(\"\\n\", \",\")\n    )\n\n    destination_list = []\n\n    for\
+          \ item in text.split(\",\"):\n        item = item.strip()\n\n        if\
+          \ item:\n            destination_list.append(item)\n\n    return {\n   \
+          \     \"destination_text\": \"、\".join(destination_list),\n        \"destination_count\"\
+          : len(destination_list)\n    }"
+        code_language: python3
+        desc: 解析目的地
+        outputs:
+          destination_count:
+            children: null
+            type: number
+          destination_text:
+            children: null
+            type: string
+        selected: false
+        title: parse_destinations
+        type: code
+        variables:
+        - value_selector:
+          - '1780808485397'
+          - destination
+          value_type: string
+          variable: destination
+      height: 78
+      id: '1780813376296'
+      position:
+        x: 984
+        y: 132.66666666666666
+      positionAbsolute:
+        x: 984
+        y: 132.66666666666666
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: 推荐景点
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v4-pro
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: c294263f-3502-4797-b0b1-7b8dcb884d3e
+          role: system
+          text: "你是一位专业旅游顾问。\n\n输入：\n旅行地点：{{#1780813376296.destination_text#}}\n旅游风格：{{#1780808485397.travel_style#}}\n\
+            旅行天数：{{#1780812640826.travel_days#}}\n旅行节奏：{{#1780808485397.pace#}}\n\n\
+            任务：\n为每个目的地推荐最多5个候选地点。\n\n推荐规则：\n- 大众打卡：地标景点、热门商圈、经典路线\n- 自然景色：山川、湖泊、海边、自然风光\n\
+            - 美食优先：夜市、美食街、特色餐饮聚集区\n- 文化历史：古城、博物馆、历史街区、文化遗产\n- 小众探索：游客较少但评价较高的地点\n\n\
+            限制：\n- 每个目的地最多5个POI\n- reason不超过25字\n- suggested_stay_hours只能是1、2、3\n\
+            - best_time只能是上午、下午、晚上\n\n只输出合法JSON，不要Markdown，不要解释，不要代码块。\n\n输出格式：\n\
+            {\n  \"destinations\": [\n    {\n      \"destination\": \"城市名称\",\n  \
+            \    \"recommended_pois\": [\n        {\n          \"name\": \"景点名称\"\
+            ,\n          \"type\": \"景点\",\n          \"reason\": \"推荐原因\",\n    \
+            \      \"suggested_stay_hours\": 2,\n          \"best_time\": \"上午\"\n\
+            \        }\n      ]\n    }\n  ]\n}"
+        selected: false
+        structured_output_enabled: true
+        title: recommend_top_pois
+        type: llm
+        vision:
+          enabled: false
+      height: 114
+      id: '1780814636466'
+      position:
+        x: 1326
+        y: 128
+      positionAbsolute:
+        x: 1326
+        y: 128
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        outputs:
+        - value_selector:
+          - '1780814636466'
+          - text
+          value_type: string
+          variable: route
+        selected: false
+        title: 输出 2
+        type: end
+      height: 86
+      id: '1780899027725'
+      position:
+        x: 2372
+        y: 116.80000000000001
+      positionAbsolute:
+        x: 2372
+        y: 116.80000000000001
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v4-pro
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 5c7205f5-4aa5-49f0-ba53-6c7c11b67f79
+          role: system
+          text: "你是一位专业旅游路线规划师。\n\n输入：\n旅行地点：{{#1780813376296.destination_text#}}\n\
+            旅行天数：{{#1780812640826.travel_days#}}\n旅游风格：{{#1780808485397.travel_style#}}\n\
+            旅行节奏：{{#1780808485397.pace#}}\n候选景点：{{#1780814636466.text#}}\n\n任务：\n\
+            根据候选景点生成每日旅行路线。\n\n规划规则：\n- 每天最多3个地点\n- 特种兵：每天3个地点\n- 适中：每天2-3个地点\n- 休闲：每天1-2个地点\n\
+            - 同一天尽量安排顺路地点\n- 夜市、美食街优先安排晚上\n- 热门景点优先安排上午\n- 不要重复安排同一地点\n\n内容限制：\n-\
+            \ theme不超过12字\n- reason不超过25字\n- summary_tips最多2条，每条不超过25字\n- xhs_tips固定输出空数组\
+            \ []\n- 如果候选景点不足，可以少排，不要编造过多地点\n\n只输出合法JSON，不要Markdown，不要解释，不要代码块，不要<think>。\n\
+            \n输出格式：\n{\n  \"itinerary\": [\n    {\n      \"day\": 1,\n      \"destination\"\
+            : \"城市名称\",\n      \"theme\": \"当天主题\",\n      \"route\": [\n        {\n\
+            \          \"name\": \"景点名称\",\n          \"time_period\": \"上午\",\n \
+            \         \"stay_hours\": 2,\n          \"reason\": \"安排原因\",\n      \
+            \    \"xhs_tips\": []\n        }\n      ],\n      \"summary_tips\": []\n\
+            \    }\n  ]\n}"
+        selected: false
+        title: GENERATE_ROUTE_FAST
+        type: llm
+        vision:
+          enabled: false
+      height: 86
+      id: '1780901047235'
+      position:
+        x: 1668
+        y: 158
+      positionAbsolute:
+        x: 1668
+        y: 158
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            max_tokens: 3072
+            temperature: 0.4
+            thinking: false
+          mode: chat
+          name: deepseek-v4-pro
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 2b086306-8bdc-4450-8d39-d868db39bfd1
+          role: system
+          text: "## 角色\n\n你是旅行攻略增强助手。\n\n## 输入\n\n基础路线 JSON：\n{{#1780901047235.text#}}\n\
+            \n小红书提取信息 JSON：\n{{#17809027007823.text#}}\n\n## 任务\n\n在不改变原路线结构的前提下，用小红书内容增强路线。\n\
+            \n## 增强范围\n\n仅允许补充：\n\n1. 避坑提示\n2. 交通建议\n3. 餐饮推荐\n4. 费用信息\n5. 景点不推荐原因\n\
+            6. 最佳游玩时间\n7. 路线顺序建议\n8. 住宿建议\n\n## 规则\n\n1. 保留原 itinerary 结构\n2. 保留 day\
+            \ 字段\n3. 保留 destination 字段\n4. 保留 theme 字段\n5. 保留 route 字段\n6. 保留景点顺序\n\
+            7. 不允许删除景点\n8. 不允许新增景点\n9. 不允许修改停留时间\n10. 不允许修改天数\n11. 只允许补充 route[].xhs_tips\n\
+            12. 只允许补充 summary_tips\n13. 如果小红书解析失败，直接返回基础路线 JSON\n14. 不要重新规划路线\n15.\
+            \ 不要编造小红书没有的信息\n\n## 输出格式\n\n{\n  \"itinerary\": [\n    {\n      \"day\"\
+            : 1,\n      \"destination\": \"城市名称\",\n      \"theme\": \"当天主题\",\n \
+            \     \"route\": [\n        {\n          \"name\": \"景点名称\",\n       \
+            \   \"time_period\": \"上午\",\n          \"stay_hours\": 2,\n         \
+            \ \"reason\": \"安排原因\",\n          \"xhs_tips\": [\n            {\n  \
+            \            \"type\": \"避坑提示\",\n              \"content\": \"具体内容\"\n\
+            \            }\n          ]\n        }\n      ],\n      \"summary_tips\"\
+            : [\n        \"整体补充建议\"\n      ]\n    }\n  ]\n}\n\n## 输出要求\n\n只能输出合法 JSON。\n\
+            禁止 Markdown。\n禁止解释文字。\n禁止代码块。\n禁止输出 <think> 或任何推理过程。\n禁止在 JSON 前后添加任何内容。\n\
+            所有字段名必须使用英文双引号。\n所有字符串必须使用英文双引号。"
+        selected: false
+        title: GENERATE_TRAVEL_GUIDE
+        type: llm
+        vision:
+          enabled: false
+      height: 86
+      id: '17809027007820'
+      position:
+        x: 3740
+        y: 340.79999999999995
+      positionAbsolute:
+        x: 3740
+        y: 340.79999999999995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        outputs:
+        - value_selector:
+          - '17809027007820'
+          - text
+          value_type: string
+          variable: text
+        selected: false
+        title: 输出
+        type: end
+      height: 86
+      id: '17809027007821'
+      position:
+        x: 4082
+        y: 354.9666666666667
+      positionAbsolute:
+        x: 4082
+        y: 354.9666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-89
+            key: ''
+            type: text
+            value: "{\n  \"url\": \"{{#1780903329637.xhs_url#}}\"\n}"
+          type: json
+        desc: ''
+        headers: Content-Type:application/json
+        isInIteration: false
+        isInLoop: false
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 1
+          retry_enabled: false
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          connect: 10
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+          read: 30
+          write: 8
+        title: HTTP 请求
+        type: http-request
+        url: http://host.docker.internal:8000/parse-xhs
+        variables: []
+      height: 106
+      id: '17809027007822'
+      position:
+        x: 2714
+        y: 289.4666666666667
+      positionAbsolute:
+        x: 2714
+        y: 289.4666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            max_tokens: 2048
+            temperature: 0.2
+            thinking: false
+          mode: chat
+          name: deepseek-v4-pro
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 3955f40d-3c5b-49ed-839e-a22315772632
+          role: system
+          text: "## 角色\n你是旅行笔记信息提取助手。\n\n## 输入\n失败原因：{{#17809027007824.failed_reason#}}\n\
+            \n小红书标题：{{#17809027007824.title#}}\n\n小红书正文：{{#17809027007824.content#}}\n\
+            \n## 任务\n从小红书正文中提取可用于补充旅行攻略的信息。\n\n## 提取类型\n请重点提取以下信息：\n1. 避坑提示\n2. 交通建议\n\
+            3. 餐饮推荐\n4. 费用信息\n5. 景点推荐\n6. 景点不推荐原因\n7. 最佳游玩时间\n8. 住宿建议\n9. 路线顺序建议\n\
+            \n## 规则\n1. 只提取正文中明确出现的信息\n2. 不要编造正文没有的信息\n3. 最多提取 12 条\n4. 如果解析状态为 false，直接返回\
+            \ failed\n5. related_poi 填具体景点；无法确定景点时填城市名称\n6. 只输出合法 JSON\n7. 禁止输出 Markdown\n\
+            8. 禁止输出解释文字\n9. 禁止输出 <think> 或任何推理过程\n\n## 输出格式\n{\n  \"fetch_status\"\
+            : \"success\",\n  \"useful_insights\": [\n    {\n      \"related_poi\"\
+            : \"相关景点或城市\",\n      \"type\": \"避坑提示/交通建议/餐饮推荐/费用信息/景点推荐/景点不推荐原因/最佳游玩时间/住宿建议/路线顺序建议\"\
+            ,\n      \"content\": \"具体信息\"\n    }\n  ],\n  \"failed_reason\": \"\"\
+            \n}\n\n## 失败输出格式\n{\n  \"fetch_status\": \"failed\",\n  \"useful_insights\"\
+            : [],\n  \"failed_reason\": \"失败原因\"\n}"
+        selected: false
+        title: XHS_CONTENT_EXTRACT
+        type: llm
+        vision:
+          enabled: false
+      height: 86
+      id: '17809027007823'
+      position:
+        x: 3398
+        y: 326.1333333333333
+      positionAbsolute:
+        x: 3398
+        y: 326.1333333333333
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import json\n\ndef main(body: str) -> dict:\n    try:\n        data\
+          \ = json.loads(body)\n\n        return {\n            \"success\": data.get(\"\
+          success\", False),\n            \"title\": data.get(\"title\", \"\"),\n\
+          \            \"content\": data.get(\"content\", \"\"),\n            \"source_url\"\
+          : data.get(\"source_url\", \"\"),\n            \"final_url\": data.get(\"\
+          final_url\", \"\"),\n            \"failed_reason\": data.get(\"failed_reason\"\
+          , \"\")\n        }\n\n    except Exception as e:\n        return {\n   \
+          \         \"success\": False,\n            \"title\": \"\",\n          \
+          \  \"content\": \"\",\n            \"source_url\": \"\",\n            \"\
+          final_url\": \"\",\n            \"failed_reason\": str(e)\n        }"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        outputs:
+          content:
+            children: null
+            type: string
+          failed_reason:
+            children: null
+            type: string
+          final_url:
+            children: null
+            type: string
+          source_url:
+            children: null
+            type: string
+          success:
+            children: null
+            type: boolean
+          title:
+            children: null
+            type: string
+        selected: false
+        title: PARSE_XHS_BODY
+        type: code
+        variables:
+        - value_selector:
+          - '17809027007822'
+          - body
+          value_type: string
+          variable: body
+      height: 50
+      id: '17809027007824'
+      position:
+        x: 3056
+        y: 335.4666666666667
+      positionAbsolute:
+        x: 3056
+        y: 335.4666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 2090fab5-31f7-4857-9172-003569f265c6
+            value: false
+            varType: boolean
+            variable_selector:
+            - '1780903329637'
+            - has_xhs_url
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 146
+      id: '1780902943201'
+      position:
+        x: 2010
+        y: 158
+      positionAbsolute:
+        x: 2010
+        y: 158
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "import re\n\ndef main(xhs_share_text: str) -> dict:\n    if not xhs_share_text:\n\
+          \        return {\n            \"xhs_url\": \"\",\n            \"has_xhs_url\"\
+          : False\n        }\n\n    pattern = r\"https?://[^\\s，。！？]+\"\n    match\
+          \ = re.search(pattern, xhs_share_text)\n\n    if not match:\n        return\
+          \ {\n            \"xhs_url\": \"\",\n            \"has_xhs_url\": False\n\
+          \        }\n\n    return {\n        \"xhs_url\": match.group(0).strip(),\n\
+          \        \"has_xhs_url\": True\n    }"
+        code_language: python3
+        outputs:
+          has_xhs_url:
+            children: null
+            type: boolean
+          xhs_url:
+            children: null
+            type: string
+        selected: false
+        title: EXTRACT_XHS_URL
+        type: code
+        variables:
+        - value_selector:
+          - '1780808485397'
+          - xhs_share_text
+          value_type: string
+          variable: xhs_share_text
+      height: 50
+      id: '1780903329637'
+      position:
+        x: 342
+        y: 119.33333333333331
+      positionAbsolute:
+        x: 342
+        y: 119.33333333333331
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    viewport:
+      x: -2614.0999999999995
+      y: 26.72333333333333
+      zoom: 0.7
+  rag_pipeline_variables: []
