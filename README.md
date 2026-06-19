@@ -2,6 +2,7 @@
 
 [![Dify](https://img.shields.io/badge/Dify-Workflow-blue?logo=dify)](https://dify.ai)
 [![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek%20V4-green)](https://deepseek.com)
+[![Streamlit](https://img.shields.io/badge/Demo-Streamlit-red?logo=streamlit)](https://xiaolvxing.streamlit.app)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > 基于 Dify Workflow + DeepSeek 大模型的智能旅行路线规划工具，支持多目的地行程生成 + 小红书笔记增强。
@@ -9,6 +10,10 @@
 ## 🎯 项目概述
 
 输入目的地、日期、旅行风格和节奏，自动生成一份完整的多日旅行攻略，包括每日路线、景点推荐、停留时长等。如果提供小红书分享链接，还会自动抓取真实用户的避坑建议、交通贴士、美食推荐等内容，在原路线基础上进行增强。
+
+### 🌐 在线体验
+
+**👉 [点击立即体验](https://xiaolvxing.streamlit.app)**（无需注册，打开即用）
 
 ### Demo 展示
 
@@ -69,24 +74,37 @@
 
 ## 🚀 如何运行
 
-### 前置条件
+### 方式一：在线体验（推荐给面试官）
 
-1. 注册 [Dify](https://cloud.dify.ai) 账号（或本地部署 Dify）
-2. 在 Dify 中配置 DeepSeek 模型提供商，填入你的 API Key
-3. （可选）部署小红书内容解析服务，或跳过小红书增强功能
+**👉 [xiaolvxing.streamlit.app](https://xiaolvxing.streamlit.app)**
 
-### 3 步运行
+打开链接 → 输入目的地 → 点击生成 → 秒出攻略。无需安装任何东西。
+
+### 方式二：本地 Streamlit 运行
 
 ```bash
-# Step 1：克隆仓库
+# 1. 克隆仓库
 git clone https://github.com/J1ngH/xiaolvxing.git
 cd xiaolvxing
 
-# Step 2：在 Dify 中导入
-# Dify 控制台 → 创建应用 → 选择 Workflow → 导入 DSL → 选择 workflow.yml
+# 2. 安装依赖
+pip install -r requirements.txt
+
+# 3. 设置 DeepSeek API Key
+# 在 https://platform.deepseek.com/api_keys 获取
+export DEEPSEEK_API_KEY=sk-your-key-here
+
+# 4. 启动应用
+streamlit run app.py
+# → 打开 http://localhost:8501
 ```
 
-**Step 3：填入 API Key → 点击 Run → 输入目的地和日期即可**
+### 方式三：Dify 导入（展示 Workflow 编排能力）
+
+1. 注册 [Dify](https://cloud.dify.ai) 账号（或本地部署 Dify）
+2. 在 Dify 中配置 DeepSeek 模型提供商，填入你的 API Key
+3. Dify 控制台 → 创建应用 → 选择 Workflow → 导入 DSL → 选择 `workflow.yml`
+4. （可选）部署小红书内容解析服务，或跳过增强功能直接使用
 
 ### 示例输入
 
@@ -130,7 +148,11 @@ cd xiaolvxing
 ```
 xiaolvxing/
 ├── README.md                # 项目说明
+├── app.py                   # Streamlit 在线 Demo（可独立运行）
 ├── workflow.yml             # Dify Workflow DSL 导出文件
+├── requirements.txt         # Python 依赖
+├── .streamlit/
+│   └── config.toml          # Streamlit 配置
 ├── assets/
 │   └── demo.png             # 运行截图
 └── docs/
