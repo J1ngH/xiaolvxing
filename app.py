@@ -139,9 +139,28 @@ def extract_xhs_url(xhs_share_text: str) -> tuple[str, bool]:
 # ============================================================
 
 
+def get_api_key() -> str:
+    """获取 DeepSeek API Key（先查 Streamlit Secrets，再查环境变量）"""
+    # Streamlit Cloud: 在 Secrets 中设置 DEEPSEEK_API_KEY = "sk-xxx"
+    try:
+        key = st.secrets["DEEPSEEK_API_KEY"]
+        if key and key != "sk-your-api-key-here":
+            return key
+    except Exception:
+        pass
+    # 本地运行：环境变量
+    key = os.getenv("DEEPSEEK_API_KEY", "")
+    if key:
+        return key
+    return ""
+
+
 def get_client() -> openai.OpenAI:
     """获取 DeepSeek API 客户端"""
-    api_key = st.secrets.get("DEEPSEEK_API_KEY", os.getenv("DEEPSEEK_API_KEY", ""))
+    api_key = get_api_key()
+    if not api_key:
+        st.error("❌ 未配置 DeepSeek API Key！请在 Streamlit Cloud Secrets 中设置 `DEEPSEEK_API_KEY = \"sk-xxx\"`")
+        st.stop()
     return openai.OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
 
 
