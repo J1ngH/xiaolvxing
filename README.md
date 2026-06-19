@@ -2,7 +2,7 @@
 
 [![Dify](https://img.shields.io/badge/Dify-Workflow-blue?logo=dify)](https://dify.ai)
 [![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek%20V4-green)](https://deepseek.com)
-[![Streamlit](https://img.shields.io/badge/Demo-Streamlit-red?logo=streamlit)](https://xiaolvxing.streamlit.app)
+[![Streamlit](https://img.shields.io/badge/Demo-Streamlit-red?logo=streamlit)](https://xiaolvxing-amrqny4tq4vyj6uqj6pqyd.streamlit.app/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > 基于 Dify Workflow + DeepSeek 大模型的智能旅行路线规划工具，支持多目的地行程生成 + 小红书笔记增强。
@@ -13,7 +13,7 @@
 
 ### 🌐 在线体验
 
-**👉 [点击立即体验](https://xiaolvxing.streamlit.app)**（无需注册，打开即用）
+**👉 [点击立即体验](https://xiaolvxing-amrqny4tq4vyj6uqj6pqyd.streamlit.app/)**（无需注册，打开即用）
 
 ### Demo 展示
 
@@ -76,7 +76,7 @@
 
 ### 方式一：在线体验
 
-**👉 [xiaolvxing.streamlit.app](https://xiaolvxing.streamlit.app)**
+**👉 [在线体验](https://xiaolvxing-amrqny4tq4vyj6uqj6pqyd.streamlit.app/)**
 
 打开链接 → 输入目的地 → 点击生成 → 秒出攻略。无需安装任何东西。
 
